@@ -22,11 +22,11 @@ class PurchasesDB(
         }
     }
 
-    override fun onUpgrade(p0: SQLiteDatabase?,
-                           p1: Int,
-                           p2: Int,
-                           p3: Int,
-                           p4: Int) {
+    override fun onUpgrade(
+        db: SQLiteDatabase?,
+        oldVersion: Int,
+        newVersion: Int
+    ) {
         TODO("Not yet implemented")
     }
 
