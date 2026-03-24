@@ -1,9 +1,12 @@
+package com.example.purchasecontrol.entities
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import dc.PurchasesDB
-class Winer {
+
+
+class Purchases {
 
     var id = 0
     var name : String = ""
@@ -13,7 +16,7 @@ class Winer {
     var store : String = ""
     var date : String = ""
 
-
+    constructor()
                                         //creamos los constructores de las nuevas variables.
     constructor(id: Int, name: String, price: Double, store: String, date: String){
 
@@ -24,7 +27,7 @@ class Winer {
         this.date = date
 
     }
-
+        //en esta funcion agregamos todos los parametros que recibira. agregando price, store y date.
     fun save(context: Context, name: String, price: Double, store: String, date: String) {
 
         try {
@@ -33,11 +36,13 @@ class Winer {
 
             val dataBase : SQLiteDatabase = purchasesDB.writableDatabase
 
+            //declaramos los valores que recibiran y donde se pondran.-
             val values = ContentValues()
             values.put("name", name)
             values.put("price", price)
             values.put("store", store)
             values.put("date", date)
+
 
             dataBase.insert("Purchase",null, values)
 
@@ -50,8 +55,8 @@ class Winer {
 
     }
 
-    fun getAll(context: Context): List<Winer>{
-        var winners : MutableList<Winer> = ArrayList()
+    fun getAll(context: Context): List<Purchases>{
+        var purchases1 : MutableList<Purchases> = ArrayList()
 
         try {
 
@@ -63,17 +68,21 @@ class Winer {
 
             while (resultSet.moveToNext()){
 
-                val purchase = Purchase(resultSet.getInt(0), resultSet.getString(1), resultSet.getString(2))
+                val purchases = Purchases(resultSet.getInt(0)
+                    , resultSet.getString(1)
+                    , resultSet.getDouble(2)
+                    , resultSet.getString(3)
+                    , resultSet.getString(4))
 
-                purchases.add(purchase)
+                purchases1.add(purchases)
 
             }
 
         }catch (ex : Exception) {
 
-            Log.e("Error saving winner", ex.message.toString())
+            Log.e("Error saving purchases", ex.message.toString())
         }
-        return winners
+        return purchases1
     }
 
 
