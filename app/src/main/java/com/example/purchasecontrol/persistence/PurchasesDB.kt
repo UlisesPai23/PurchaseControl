@@ -10,7 +10,7 @@ class PurchasesDB(
     context : Context?,
     name : String?,
     factory : SQLiteDatabase.CursorFactory?,
-    version : Int
+    version : In
 ) : SQLiteOpenHelper(context, name, factory, version){
 
     override fun onCreate(sqliteDatabase: SQLiteDatabase) {
