@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">PurchaseControl</string>
     <string name="txt_app">Purchase App</string>
+    <string name="btn_main">Puechase BTN</string>
+    <string name="btn_purchase_list">list btn</string>
 </resources>
