@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">PurchaseControl</string>
-    <string name="txt_app">Purchase App</string>
-    <string name="btn_main">Purchase BTN</string>
-    <string name="btn_purchase_list">list btn</string>
+    <string name="txt_btnForm">Add purchase</string>
+    <string name="txt_btnList">See purchases</string>
+    <string name="txt_RegisterForm">What did you buy?</string>
+    <string name="txt_nameForm">Product name</string>
+    <string name="txt_priceForm">Product price?</string>
+    <string name="txt_storeForm">Where did you buy it?</string>
+    <string name="txt_dateForm">when you bought it?</string>
+    <string name="btn_save">Save</string>
 </resources>

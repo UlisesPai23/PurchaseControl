@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PurchaseControl</string>
-    <string name="txt_app">Purchase App</string>
-    <string name="btn_main">Puechase BTN</string>
-    <string name="btn_purchase_list">list btn</string>
+    <string name="txt_btnForm">añadir compra</string>
+    <string name="txt_btnList">Ver compras</string>
+    <string name="txt_RegisterForm">¿Qué compraste?</string>
+    <string name="txt_nameForm">Nombre del producto</string>
+    <string name="txt_priceForm">¿Precio del producto?</string>
+    <string name="txt_storeForm">¿Dónde lo compraste?</string>
+    <string name="txt_dateForm">¿Cuando lo compraste?</string>
+    <string name="btn_save">Guardar</string>
 </resources>
