@@ -16,7 +16,7 @@ class PurchasesDB(
     override fun onCreate(sqliteDatabase: SQLiteDatabase) {
         try {
             // Creamos la tabla con los campos solicitados: nuevo producto, precio, tienda. (fecha queda pendiente).
-            sqliteDatabase.execSQL("CREATE TABLE Purchases (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price DOUBLE, store TEXT, date TEXT)")
+            sqliteDatabase.execSQL("CREATE TABLE Purchases (id INTEGER PRIMARY KEY AUTOINCREMENT, product TEXT, price DOUBLE, store TEXT, date TEXT)")
         } catch (ex: Exception){
             Log.e("Error al crear la base de datos", ex.message.toString())
         }

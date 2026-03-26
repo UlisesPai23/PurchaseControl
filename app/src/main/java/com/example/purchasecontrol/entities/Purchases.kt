@@ -9,7 +9,7 @@ import dc.PurchasesDB
 class Purchases {
 
     var id = 0
-    var name : String = ""
+    var product : String = ""
 
     //creamos las nuevas variables
     var price : Double = 0.0
@@ -18,17 +18,17 @@ class Purchases {
 
     constructor()
                                         //creamos los constructores de las nuevas variables.
-    constructor(id: Int, name: String, price: Double, store: String, date: String){
+    constructor(id: Int, product: String, price: Double, store: String, date: String){
 
         this.id =id
-        this.name = name
+        this.product = product
         this.price = price
         this.store = store
         this.date = date
 
     }
         //en esta funcion agregamos todos los parametros que recibira. agregando price, store y date.
-    fun save(context: Context, name: String, price: Double, store: String, date: String) {
+    fun save(context: Context, product: String, price: Double, store: String, date: String) {
 
         try {
 
@@ -38,13 +38,13 @@ class Purchases {
 
             //declaramos los valores que recibiran y donde se pondran.-
             val values = ContentValues()
-            values.put("name", name)
+            values.put("product", product)
             values.put("price", price)
             values.put("store", store)
             values.put("date", date)
 
 
-            dataBase.insert("Purchase",null, values)
+            dataBase.insert("Purchases",null, values)
 
 
         }catch (ex: Exception){
@@ -56,7 +56,7 @@ class Purchases {
     }
 
     fun getAll(context: Context): List<Purchases>{
-        var purchases1 : MutableList<Purchases> = ArrayList()
+        val purchases1 : MutableList<Purchases> = ArrayList()
 
         try {
 
@@ -64,7 +64,7 @@ class Purchases {
 
             val dataBase : SQLiteDatabase = purchasesDB.readableDatabase
 
-            val resultSet = dataBase.rawQuery("SELECT id, name, price, store, date FROM Purchase", null)
+            val resultSet = dataBase.rawQuery("SELECT id, product, price, store, date FROM Purchases", null)
 
             while (resultSet.moveToNext()){
 
